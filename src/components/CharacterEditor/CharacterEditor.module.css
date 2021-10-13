@@ -4,10 +4,15 @@
 }
 
 .maxWidthWrapper {
+  /* 因為browser會先render static-item然後才render non-static item,
+   所以perspectiveBox會把wrapper蓋掉，
+   把position設relative讓maxwidthwrapper變non-static item，都是non-static item後，order在前面的就會被後面的蓋掉 */
+  position: relative;
 }
 
 .header {
   padding-bottom: 64px;
+  width: 65%;
 }
 
 .title {
@@ -24,7 +29,25 @@
 }
 
 .characterWrapper {
+  position: fixed;
+  top: 15%;
+  left: 60%;
+  bottom: 5%;
+  min-height: 500px;
 }
 
 .controlColumn {
+  width: 50%;
+}
+
+.perspectiveBox {
+  background-color: hsl(195deg, 20%, 86%);
+  position: fixed;
+  top: 60%;
+  height: 40%;
+  width: 100%;
+  /* bottom: 0;
+  left: 0;
+  right: 0; */
+  
 }
